@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    private static final String URL = "https://api.themoviedb.org/3/m ovie/now_playing?api_key=%s";
+    private static final String URL = "https://api.themoviedb.org/3/movie/now_playing?api_key=%s"; // Fixed space in URL
 
     // please note that normally we would not leave API keys inside of a file we are exposing to github
     private static final String APIKey = "a07e22bc18f5cb106bfe4cc1f83ad8ed";
@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
                     // extract all movies from JSON
                     JSONArray results = jsonObject.getJSONArray("results");
                     movies.addAll(Movie.fromJsonArray(results));
-
+                    adapter.notifyDataSetChanged(); // Added - need to notify the adapter that the dataset changed
                 }
                 catch (JSONException e)
                 {

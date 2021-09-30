@@ -20,7 +20,7 @@ public class Movie {
 
     // basic constructor
     public Movie(JSONObject jsonObject) throws JSONException {
-        setTitle(jsonObject.getString("Title"));
+        setTitle(jsonObject.getString("title")); // Changed Title to be appropriate match "title"
         setOverview(jsonObject.getString("overview"));
         setPosterPath(jsonObject.getString("poster_path"));
     }
